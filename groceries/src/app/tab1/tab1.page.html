@@ -15,14 +15,14 @@
 
   <ion-list>
     <!-- Sliding item with text options on both sides -->
-    <ion-item-sliding *ngFor="let item of items">
+    <ion-item-sliding *ngFor="let item of items; let i = index">
       <ion-item>  
         <ion-label>
           <h2>{{item.name}} - {{item.quantity}}</h2>
         </ion-label>
       </ion-item>
       <ion-item-options side="end">
-        <ion-button (click)="removeItem(item)" color="danger" icon-start>
+        <ion-button (click)="removeItem(item, i)" color="danger" icon-start>
           <ion-icon name="trash"></ion-icon>
           Delete
         </ion-button>
@@ -30,4 +30,11 @@
     </ion-item-sliding>
       
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addItem()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
