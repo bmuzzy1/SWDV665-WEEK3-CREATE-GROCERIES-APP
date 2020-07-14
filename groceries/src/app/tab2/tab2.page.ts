@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  title = "About This App";
+
   constructor() {}
 
 }
